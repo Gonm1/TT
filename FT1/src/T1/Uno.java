@@ -19,7 +19,7 @@ public class Uno {
 		System.out.println(a);
 		
 		TM m = CreateTM();
-		displayTM(m);
+		//displayTM(m);
 		
 		m.states.get(m.states.size()-1).setTerminal(true);
 		int i = 0;
