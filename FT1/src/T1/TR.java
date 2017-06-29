@@ -2,38 +2,48 @@ package T1;
 
 public class TR {
 	
-	String si,qj,sj;
-	String movimiento;
+	char si,qj,sj,movimiento;
 	
-	public TR(String si, String qj, String sj, String movimiento) {
+	public TR(char si, char qj, char sj, char movimiento) {
 		super();
 		this.si = si;
 		this.qj = qj;
 		this.sj = sj;
 		this.movimiento = movimiento;
 	}
-	public String getSi() {
+
+	public char getSi() {
 		return si;
 	}
-	public void setSi(String si) {
+
+	public void setSi(char si) {
 		this.si = si;
 	}
-	public String getQj() {
+
+	public char getQj() {
 		return qj;
 	}
-	public void setQj(String qj) {
+
+	public void setQj(char qj) {
 		this.qj = qj;
 	}
-	public String getSj() {
+
+	public char getSj() {
 		return sj;
 	}
-	public void setSj(String sj) {
+
+	public void setSj(char sj) {
 		this.sj = sj;
 	}
-	public String getMovimiento() {
+
+	public char getMovimiento() {
 		return movimiento;
 	}
-	public void setMoviemiento(String moviemiento) {
-		this.movimiento = moviemiento;
+
+	public void setMovimiento(char movimiento) {
+		this.movimiento = movimiento;
 	}
+	
+	
+	
 }

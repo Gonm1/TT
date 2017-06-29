@@ -8,7 +8,7 @@ public class ST {
 	
 	String qi;
 	boolean terminal = false;
-	ArrayList<TR> trans;
+	ArrayList<TR> trans = null;
 	
 	public ST(String n) {
 		qi = n;
