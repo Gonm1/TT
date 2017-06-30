@@ -24,34 +24,61 @@ public class Uno {
 		}
 		string.addFirst('#');
 		string.addLast('#');
-		
-		
+		/*
+		for (int j = 0; j < string.size() ; j++) {
+			System.out.print(string.get(j));
+		}
+		System.out.println();
+		*/
 		TM m = CreateTM();
-		//displayTM(m);
-		
+		displayTM(m);
+		/*
 		m.states.get(m.states.size()-1).setTerminal(true);
 		int i = 0;
 		int U = 1;
-		while(!m.states.get(i).isTerminal()){
-			for(int j = 0 ; j < m.states.get(i).trans.size()-1 ; j++){
-				System.out.println(string.get(U));
+		int aux = 0;
+		boolean flag = true;
+		
+		System.out.println(m.states.get(m.states.size()-1).isTerminal());
+		System.out.println(m.states.get(m.states.size()-1).getQi());
+		
+		while(!m.states.get(i).isTerminal() && flag){
+			//System.out.println("U: "+U);
+			for(int j = 0 ; j < m.states.get(i).trans.size() ; j++){
 				if(m.states.get(i).trans.get(j).getSi() == string.get(U)){
-					string.set(U, m.states.get(i).trans.get(j).sj); // (index , valor) en la lista
-					i = Character.getNumericValue(m.states.get(i).trans.get(j).qj);
-					if(m.states.get(i).trans.get(j).movimiento == 'R'){
-						U++;
-					}else if(m.states.get(i).trans.get(j).movimiento == 'L'){
-						U--;
-					}
+					aux = j;
+					break;
+				}else if(j == m.states.get(i).trans.size()-1){
+					flag = false;
 				}
-				System.out.println("Flag1");
 			}
-			System.out.println("count");
-			
+			if(flag){
+			string.set(U, m.states.get(i).trans.get(aux).sj);
+
+			if(m.states.get(i).trans.get(aux).movimiento == 'R'){
+				if(U < string.size()){
+					U++;
+				}
+			}else if(m.states.get(i).trans.get(aux).movimiento == 'L'){
+				if(U > 0){
+					U--;
+				}
+			}
+			//System.out.println("Qi: "+m.states.get(i).getQi());
+			i = Character.getNumericValue(m.states.get(i).trans.get(aux).qj);// (index , valor) en la lista
+			//System.out.println("i: "+i);
+			}
+		}
+		if(flag){
+			System.out.println("Cadena aceptada");
+		}else{
+			System.out.println("Cadena rechazada");
 		}
 		
-		
-		
+		for (int j = 0; j < string.size() ; j++) {
+			System.out.print(string.get(j));
+		}
+		*/
 	}
 	
 	private static void displayTM (TM m) {
